@@ -8,12 +8,14 @@ from ultralytics import YOLO
 # model = YOLO('yolo11l.pt')
 model = YOLO('fisheye_model.pt')  # the model trained from running the train_YOLO.ipynb with Google colab GPU
 
-# run inference on the source
-# save=True --> saves the output in runs/detect/predict
+### run inference on the source
+### save=True --> saves the output in runs/detect/predict
 
 # results = model(source=1, show=True, conf=0.4) # opens webcam if available
 # results = model(source=r'data/test1.mp4', show=True, conf=0.4, save=True)
-results = model(source=r'data/test_fisheye.mp4', show=True, conf=0.4, save=True)
+# results = model(source=r'data/test_fisheye.mp4', show=True, conf=0.4, save=True)
+results = model(source=r'data/test_fisheye2.mp4', show=True, conf=0.4, save=True)
+### the fisheye_model detections for test_fisheye2.mp4 looks better since the model was trained on this intersection
 
 #object tracking:  https://docs.ultralytics.com/modes/track/
 # results = model.track(r'data/test_fisheye.mp4', show=True, tracker="bytetrack.yaml")  # with ByteTrack
